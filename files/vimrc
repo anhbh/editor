@@ -1,0 +1,16 @@
+
+filetype plugin indent on
+filetype indent on
+
+set laststatus=2
+set number
+set wildmenu
+
+set noautoindent
+set smartindent
+set cindent
+set paste
+
+set shiftwidth=4
+set tabstop=4
+
