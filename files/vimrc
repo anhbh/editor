@@ -1,6 +1,10 @@
 set nocompatible
 filetype off
 
+
+" Cscope
+source ~/.vim/plugin/cscope_maps.vim/plugin/cscope_maps.vim
+
 " Install plugins
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -20,6 +24,10 @@ filetype indent on
 
 " Mapping keys
 
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+
+" split pane keys
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -36,4 +44,5 @@ set paste
 
 set shiftwidth=4
 set tabstop=4
+set hlsearch
 
