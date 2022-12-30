@@ -1,6 +1,29 @@
+set nocompatible
+filetype off
+
+" Install plugins
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+" Plugin managers
+Plugin 'VundleVim/Vundle.vim'
+
+
+call vundle#end()
+
+
 
 filetype plugin indent on
 filetype indent on
+
+" Mapping keys
+
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
 
 set laststatus=2
 set number
