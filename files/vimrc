@@ -24,20 +24,46 @@ filetype indent on
 
 " Mapping keys
 
-nnoremap <C-h> gT
-nnoremap <C-l> gt
-
 " split pane keys
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" tabs
+
+function GuiTabLabel()
+	let label = ''
+	let bufnrlist = tabpagebuflist(v:lnum)
+
+	for bufnr in bufnrlist
+		if getbufvar(bufnr, "&modified")
+			let label = '+'
+			break
+		endif
+	endfor
+
+	let wincount = tabpagewinnr(v:lnum, '$')
+	if wincount > 1
+		let label .= wincount
+	endif
+	if label != ''
+		let label .= ' '
+	endif
+
+	return label . bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
+endfunction
+set guitablabel=%{GuiTabLabel()}
+
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+map T :tab sp<CR>
+
 set laststatus=2
 set number
 set wildmenu
 
-set noautoindent
+set autoindent
 set smartindent
 set cindent
 set paste

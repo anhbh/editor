@@ -20,14 +20,18 @@ cp -r files/vim ~/.vim
 cp files/csbuild ~/.local/bin/
 
 
-
-
 ## plugins
 # plugin manager vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # cscope_maps.vim
 git clone https://github.com/joe-skb7/cscope-maps.git ~/.vim/plugin/cscope_maps.vim
+
+# fzf
+
+
+# tabs
+
 
 ### install plugins
 vim -c PluginInstall -c qa
